@@ -1,11 +1,28 @@
-<h1>My tasks</h1>
+<div class="">
+  <h1 class="title">Mes tâches</h1>
 
-<% @tasks.each do |task| %>
-  <%= task.completed %>
-  <%= link_to task.title, task_path(task) %>
-  <%= link_to "Delete", task_delete_path(task), method: :delete, data: { confirm: "Are you sure?" } %>
-  <br>
-<% end %>
+<div class="container">
+  <div class="cards">
+  <% @tasks.each do |task| %>
+    <div class="card">
+      <ul>
+        <h3><%= task.title %></h3>
 
-<%= link_to "Add new task", tasks_new_path %>
+        <p>
+          <%= task.details %>
+        </p>
+
+        <%= link_to "Modifier", task_edit_path(task) %>
+        <%= link_to "Supprimer", task_delete_path(task), method: :delete, data: { confirm: "Are you sure?" } %>
+      </ul>
+    </div>
+  <% end %>
+  </div>
+
+  <div class="btn">
+    <%= link_to "Ajouter une nouvelle tâche", tasks_new_path %>
+  </div>
+
+</div>
+</div>
 

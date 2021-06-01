@@ -1,6 +1,7 @@
 <%= simple_form_for(@task) do |f| %>
   <%= f.input :title %>
   <%= f.input :details %>
+  <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
   <%= f.input :completed %>
   <%= f.submit %>
 <% end %>
