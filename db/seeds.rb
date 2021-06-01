@@ -13,6 +13,9 @@ task_2 = Task.create(title: "Faire la liste des courses", details: "Attention au
 task_3 = Task.create(title: "Aller à la décharge", details: "")
 task_4 = Task.create(title: "Prendre rendez-vous dentiste", details: "Trouver une bon dentiste")
 task_5 = Task.create(title: "Aller à la poste", details: "Ne pas oublier avis de passage")
+task_6 = Task.create(title: "Prévoir un restaurant en terrasse", details: "")
+task_7 = Task.create(title: "Organiser journée à la plage", details: "Le 3e week-end de Juin")
+
 
 
 
