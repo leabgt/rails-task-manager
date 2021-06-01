@@ -1,28 +1,27 @@
-<div class="">
-  <h1 class="title">Mes tâches</h1>
+<h1 class="title">To Do List</h1>
 
 <div class="container">
-  <div class="cards">
+
+  <div class="col-md-12 text-center">
+    <%= link_to "Ajouter une nouvelle tâche", tasks_new_path, class: "add-button"%>
+  </div>
+
+  <div class="taskcards">
   <% @tasks.each do |task| %>
-    <div class="card">
-      <ul>
+    <div class="taskcard">
+
+      <div class="description">
         <h3><%= task.title %></h3>
+        <p><%= task.details %></p>
+      </div>
 
-        <p>
-          <%= task.details %>
-        </p>
-
-        <%= link_to "Modifier", task_edit_path(task) %>
-        <%= link_to "Supprimer", task_delete_path(task), method: :delete, data: { confirm: "Are you sure?" } %>
-      </ul>
+      <div class="update-link">
+        <%= link_to "Modifier", task_edit_path(task), class: "text-decoration-none link" %>
+        <%= link_to "Supprimer", task_delete_path(task), method: :delete, data: { confirm: "Are you sure?" }, class: "text-decoration-none link" %>
+      </div>
     </div>
   <% end %>
   </div>
 
-  <div class="btn">
-    <%= link_to "Ajouter une nouvelle tâche", tasks_new_path %>
-  </div>
-
-</div>
 </div>
 
